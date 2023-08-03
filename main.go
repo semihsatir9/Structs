@@ -40,12 +40,14 @@ func main(){
 	// Also possible. Not recommended.
 
 	p1.toString() // Print format. Can get spesific formatted data.
-	p1.updateName("Semihhh")
+
+	p1Pointer := &p1
+	p1Pointer.updateName("Semihhh")
 	p1.toString()
 }
 
-func (p person) updateName(newName string){
-	p.firstName = newName
+func (pointerToPerson *person) updateName(newName string){
+	(*pointerToPerson).firstName = newName
 } 
 
 func (p person) toString(){
